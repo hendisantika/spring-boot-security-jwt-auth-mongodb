@@ -1,7 +1,10 @@
 package id.my.hendisantika.springbootsecurityjwtauthmongodb.service;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
 
 /**
  * Created by IntelliJ IDEA.
@@ -16,12 +19,23 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class UserDetailsImpl implements UserDetails {
     private static final long serialVersionUID = 1L;
 
-    private String id;
+    private final String id;
 
-    private String username;
+    private final String username;
 
-    private String email;
+    private final String email;
 
     @JsonIgnore
-    private String password;
+    private final String password;
+
+    private final Collection<? extends GrantedAuthority> authorities;
+
+    public UserDetailsImpl(String id, String username, String email, String password,
+                           Collection<? extends GrantedAuthority> authorities) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.authorities = authorities;
+    }
 }
