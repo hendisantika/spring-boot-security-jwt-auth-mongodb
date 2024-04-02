@@ -1,8 +1,16 @@
 package id.my.hendisantika.springbootsecurityjwtauthmongodb.security;
 
+import id.my.hendisantika.springbootsecurityjwtauthmongodb.service.UserDetailsImpl;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
+
+import java.util.Date;
+
+import static jdk.internal.org.jline.keymap.KeyMap.key;
 
 /**
  * Created by IntelliJ IDEA.
@@ -23,4 +31,16 @@ public class JwtUtils {
 
     @Value("${hendi.app.jwtExpirationMs}")
     private int jwtExpirationMs;
+
+    public String generateJwtToken(Authentication authentication) {
+
+        UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
+
+        return Jwts.builder()
+                .setSubject((userPrincipal.getUsername()))
+                .setIssuedAt(new Date())
+                .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
+                .signWith(key(), SignatureAlgorithm.HS256)
+                .compact();
+    }
 }
