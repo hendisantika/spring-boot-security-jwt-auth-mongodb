@@ -1,5 +1,7 @@
 package id.my.hendisantika.springbootsecurityjwtauthmongodb.config;
 
+import id.my.hendisantika.springbootsecurityjwtauthmongodb.security.AuthEntryPointJwt;
+import id.my.hendisantika.springbootsecurityjwtauthmongodb.security.AuthTokenFilter;
 import id.my.hendisantika.springbootsecurityjwtauthmongodb.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
