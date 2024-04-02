@@ -8,6 +8,8 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
  * Created by IntelliJ IDEA.
@@ -62,4 +64,21 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
         return authConfig.getAuthenticationManager();
     }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+//@Override
+//protected void configure(HttpSecurity http) throws Exception {
+//  http.cors().and().csrf().disable()
+//    .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
+//    .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+//    .authorizeRequests().antMatchers("/api/auth/**").permitAll()
+//    .antMatchers("/api/test/**").permitAll()
+//    .anyRequest().authenticated();
+//
+//  http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+//}
 }
