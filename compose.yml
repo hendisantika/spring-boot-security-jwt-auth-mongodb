@@ -11,3 +11,9 @@ services:
       - 'MONGO_INITDB_ROOT_PASSWORD=secret'
     volumes:
       - './mongo-volume:/data/db'
+      - './docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro'
+    labels:
+      org.springframework.boot.service-connection: mongo
+volumes:
+  mongodb:
+    driver: local
