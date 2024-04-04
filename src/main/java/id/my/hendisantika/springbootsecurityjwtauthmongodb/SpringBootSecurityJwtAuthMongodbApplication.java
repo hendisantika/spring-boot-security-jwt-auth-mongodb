@@ -23,7 +23,8 @@ public class SpringBootSecurityJwtAuthMongodbApplication {
         return (args ->
                 roleRepository.saveAll(
                         List.of(new Role(ERole.ROLE_USER),
-                                new Role(ERole.ROLE_ADMIN), new Role(ERole.ROLE_MODERATOR))
+                                new Role(ERole.ROLE_ADMIN),
+                                new Role(ERole.ROLE_MODERATOR))
                 ));
     }
 
