@@ -23,3 +23,12 @@ You can have an overview of our Spring Boot Server with the diagram below:
 ```
 mvn clean spring-boot:run
 ```
+
+### Image Screenshot
+
+Auth Flow
+
+![Auth Flow](img/flow.png "Auth Flow")
+
+Architecture
+![Architecture](img/architecture.png "Architecture")
