@@ -10,13 +10,13 @@
 
 ## User Registration, Login and Authorization process.
 
-![spring-boot-mongodb-jwt-authentication-flow](spring-boot-mongodb-jwt-authentication-flow.png)
+![Auth Flow](img/flow.png "Auth Flow")
 
 ## Spring Boot Rest API Architecture with Spring Security
 
 You can have an overview of our Spring Boot Server with the diagram below:
 
-![spring-boot-mongodb-jwt-authentication-spring-security-architecture](spring-boot-mongodb-jwt-authentication-spring-security-architecture.png)
+![Architecture](img/architecture.png "Architecture")
 
 ## Run Spring Boot application
 
@@ -27,7 +27,6 @@ mvn clean spring-boot:run
 ### Image Screenshot
 
 Auth Flow
-
 ![Auth Flow](img/flow.png "Auth Flow")
 
 Architecture
