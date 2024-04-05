@@ -3,18 +3,25 @@ package id.my.hendisantika.springbootsecurityjwtauthmongodb;
 import id.my.hendisantika.springbootsecurityjwtauthmongodb.model.ERole;
 import id.my.hendisantika.springbootsecurityjwtauthmongodb.model.Role;
 import id.my.hendisantika.springbootsecurityjwtauthmongodb.repository.RoleRepository;
+import lombok.extern.slf4j.Slf4j;
+import lombok.val;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 import java.util.List;
 
+@Slf4j
 @SpringBootApplication
 public class SpringBootSecurityJwtAuthMongodbApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootSecurityJwtAuthMongodbApplication.class, args);
+        ConfigurableApplicationContext app = SpringApplication.run(SpringBootSecurityJwtAuthMongodbApplication.class, args);
+
+        val env = app.getEnvironment();
+        log.info(env.getProperty("spring.data.mongodb.uri"));
     }
 
     @Bean
