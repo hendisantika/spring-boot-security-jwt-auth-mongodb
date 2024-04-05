@@ -33,6 +33,10 @@ mvn clean spring-boot:run
 
 ### Image Screenshot
 
+Swagger UI
+
+![Swagger UI](img/swagger.png "Swagger UI")
+
 Auth Flow
 ![Auth Flow](img/flow.png "Auth Flow")
 
