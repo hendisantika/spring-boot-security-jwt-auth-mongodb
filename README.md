@@ -1,5 +1,12 @@
 # spring-boot-security-jwt-auth-mongodb
 
+### Things todo list
+
+1. Clone this repository: `git clone https://github.com/hendisantika/spring-boot-security-jwt-auth-mongodb.git`
+2. Navigate to the folder: `cd spring-boot-security-jwt-auth-mongodb`
+3. Run the application: `mvn clean spring-boot:run`
+4. Open your favorite browser: http://localhost:8080/swagger-ui
+
 # Spring Boot, Spring Security, MongoDB - JWT Authentication & Authorization example
 
 - Appropriate Flow for User Signup & User Login with JWT Authentication
@@ -44,7 +51,7 @@ Architecture
 * moderator with `ROLE_MODERATOR` and `ROLE_USER`
 * nanami with `ROLE_USER`
 
-Sample Shell Scripts
+### Sample Shell Scripts
 
 ```shell
 ocker exec -it mongodb mongosh
